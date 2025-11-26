@@ -1,3 +1,5 @@
+import pandas as pd
+
 class FlightRangeProcessor:
     '''
     비행거리를 기반으로 단거리/중거리/장거리 구간을 생성하는 클래스
@@ -15,8 +17,9 @@ class FlightRangeProcessor:
         df['Flight_Range'] = pd.cut(
             df['Flight Distance'],
             bins=self.bins,
-            labels=self.labels
-            right=self.right
+            labels=self.labels,
+            # right = self.right
+            right=False
         )
         return df
 
