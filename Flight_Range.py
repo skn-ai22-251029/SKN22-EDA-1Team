@@ -1,5 +1,3 @@
-import pandas as pd
-
 class FlightRangeProcessor:
     '''
     비행거리를 기반으로 단거리/중거리/장거리 구간을 생성하는 클래스
