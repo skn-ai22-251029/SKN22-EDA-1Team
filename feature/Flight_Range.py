@@ -23,3 +23,24 @@ class FlightRangeProcessor:
         )
         return df
 
+class TechScoreProcessor:
+    '''
+    techscore를 점수대 별로 구분하는 클래스
+    '''
+    def __init__(self):
+        # 구간 기준 설정 [0, 1, 2, 3, 4, float('inf')]
+        self.bins = [0, 1, 2, 3, 4 ,float('inf')]
+        self.labels = ['terrible','bad','soso','good','great']
+       
+    def process(self, df: pd.DataFrame) -> pd.DataFrame:
+        df['Tech_score_range'] = pd.cut(
+            df['Tech_Score'],
+            bins=self.bins,
+            labels=self.labels,
+            # right = self.right
+            right=False
+        )
+        return df
+        
+        
+
