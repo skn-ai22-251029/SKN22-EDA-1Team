@@ -87,8 +87,8 @@
 
 ### 1️⃣ 서비스 점수와 만족도의 관계
 - **분석 대상**: `Hard_Service_Score`, `Soft_Service_Score`, `Tech_Score` ↔ `Satisfaction`
-- **결과**: 세 가지 서비스 점수 모두 만족도와 **뚜렷한 양의 상관관계**를 보입니다.
-- **인사이트**: 특정 서비스 하나만 개선하는 것보다 물리적 환경, 인적 서비스, 기술적 편의성이 골고루 갖춰질 때 만족도가 극대화됩니다.
+- **결과**: 세 가지 점수 모두 양의 상관관계를 보이나, **모델 중요도(Feature Importance) 분석 결과 `Tech`와 `Hard` 점수의 영향력이 압도적**으로 높게 나타났습니다.
+- **인사이트**: `Soft_Service`(승무원 친절도 등)는 만족도에 긍정적 영향은 주지만 결정적인 요소는 아닙니다. 실질적인 만족도 제고를 위해서는 **와이파이 품질, 예약 시스템 등 `Tech_Service`와 좌석 편의성 같은 `Hard_Service`의 개선이 최우선** 과제입니다.
 
 ### 2️⃣ 여행 유형(Type of Travel)과 만족도의 관계
 - **분석 대상**: `Type of Travel` ↔ `Satisfaction`
@@ -102,9 +102,11 @@
 
 ## 7. 요약 및 인사이트 도출 (Conclusion)
 ### 🔎 요약
+
 **1️⃣ 서비스 점수와 만족도의 관계**
-- `Hard_Service_Score`, `Soft_Service_Score`, `Tech_Score`와 Satisfaction Score 간의 관계를 분석했습니다.
-- **결과**: 각 서비스 점수가 높을수록 만족도가 높아집니다. 물리적, 인적, 기술적 서비스가 모두 만족도에 기여함을 확인했습니다. 
+- `Hard_Service_Score`, `Soft_Service_Score`, `Tech_Score`와 Satisfaction Score 간의 관계를 종합적으로 분석했습니다.
+- **결과**: 모든 서비스 점수가 만족도와 양의 상관관계를 보이나, **모델 중요도(Feature Importance) 분석 결과 `Tech` 및 `Hard` 점수가 만족도를 가르는 결정적 변수**임이 확인되었습니다.
+- **인사이트**: 인적 서비스(Soft)의 개선도 필요하지만, 실질적인 고객 만족 달성을 위해서는 **와이파이, 온라인 예약(Tech) 및 좌석 편의성(Hard) 같은 핵심 인프라의 품질 확보가 선행**되어야 합니다.
 
 **2️⃣ 여행 유형(Type of Travel)과 만족도의 관계**
 - **Business Travel** (업무 목적 여행) 고객의 만족도가 상대적으로 높게 나타났습니다.
