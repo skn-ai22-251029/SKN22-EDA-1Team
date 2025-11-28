@@ -82,7 +82,18 @@
 | **Age_Group** | 나이를 구간별로 그룹화 | Age |
 | **Tech_score_range** | Tech_Score 기반의 기술 서비스 그룹화 | Tech_Score |
 
-## 6. 변수 간 관계 분석 (Exploratory Data Analysis)
+## 6. 데이터 전처리 (Data Preprocessing)
+머신러닝 모델(특히 MLP 등 거리 기반 모델)의 학습 효율성과 성능 극대화를 위해 데이터 스케일링 전략을 수립하였습니다.
+
+### 📌 스케일링 전략 (Scaling Strategy)
+데이터의 특성(Feature Nature)과 분포(Distribution)를 고려하여 **이중 변환(Dual Transformation)** 방식을 채택했습니다.
+
+| 구분 | 적용 대상 변수 | 적용 기법 | 선정 근거 (Rationale) |
+|---|---|---|---|
+| **Step 1** | `Flight Distance`, `Departure/Arrival Delay` | **Log Transformation (Log1p)** | 데이터가 오른쪽으로 긴 꼬리(Right-skewed)를 가짐. 극단값(Outlier)의 영향력을 축소하고 분포를 정규분포에 가깝게 보정. |
+| **Step 2** | `Log_Transformed_Features` | **StandardScaler** | 로그 변환된 데이터의 평균을 0, 분산을 1로 조정. 변수 간 단위 격차(Magnitude Difference)를 해소하여 모델 수렴 속도 개선. |
+
+## 7. 변수 간 관계 분석 (Exploratory Data Analysis)
 **Heatmap, KDE Plot, Bar Plot** 등을 활용하여 주요 변수와 만족도 간의 관계를 시각화하고 분석했습니다.
 
 ### 1️⃣ 서비스 점수와 만족도의 관계
@@ -100,9 +111,9 @@
 - **결과**: 좌석 등급이 높을수록(**Eco < Eco Plus < Business**) 만족도 비율이 상승합니다.
 - **인사이트**: 상위 클래스에서 제공되는 차별화된 서비스가 고객 만족에 직접적인 영향을 미치고 있습니다.
 
-## 7. 요약 및 인사이트 도출 (Conclusion)
+## 8. 요약 및 인사이트 도출 (Conclusion)
 ### 🔎 요약
-
+x`
 **1️⃣ 서비스 점수와 만족도의 관계**
 - `Hard_Service_Score`, `Soft_Service_Score`, `Tech_Score`와 Satisfaction Score 간의 관계를 종합적으로 분석했습니다.
 - **결과**: 모든 서비스 점수가 만족도와 양의 상관관계를 보이나, **모델 중요도(Feature Importance) 분석 결과 `Tech` 및 `Hard` 점수가 만족도를 가르는 결정적 변수**임이 확인되었습니다.
