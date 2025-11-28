@@ -5,7 +5,7 @@
 
 - **분석 목적**: 항공사 서비스 품질 향상 및 고객 이탈 방지를 위한 데이터 기반 인사이트 도출
 - **데이터 출처**: [Kaggle - Airline Passenger Satisfaction Dataset](https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction)
-- **데이터 구성**: 총 35개 컬럼 (Original Features + Derived Features), 약 13만 건의 데이터
+- **데이터 구성**: 총 35개 컬럼 (Original Features + Derived Features), 약 10만 건의 데이터
 
 ## 2. 파일 구조 (File Structure)
 데이터 전처리의 효율성과 재사용성을 높이기 위해 주요 변수 변환 로직을 모듈화하였습니다.
